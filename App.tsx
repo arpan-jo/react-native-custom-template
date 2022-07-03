@@ -1,17 +1,16 @@
 import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
+import {Appearance} from 'react-native';
 import {Provider as PaperProvider} from 'react-native-paper';
 import {
   initialWindowMetrics,
   SafeAreaProvider,
 } from 'react-native-safe-area-context';
-import RootNavigation from './src/navigation/RootNavigation';
-import {Appearance} from 'react-native';
-import DefaultTheme from './src/custom/Theme';
 import {Provider} from 'react-redux';
-import {persistor, store} from './src/redux/store';
-import {persistStore} from 'redux-persist';
 import {PersistGate} from 'redux-persist/integration/react';
+import DefaultTheme from './src/custom/Theme';
+import RootNavigation from './src/navigation/RootNavigation';
+import {persistor, store} from './src/redux/store';
 
 const App = () => {
   const colorScheme = Appearance.getColorScheme();
