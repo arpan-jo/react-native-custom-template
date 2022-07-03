@@ -1,14 +1,22 @@
-import {createSlice} from '@reduxjs/toolkit';
+import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 
-const initialState = {
+interface AuthStateType {
+  name: string;
+}
+
+const initialState: AuthStateType = {
   name: '',
 };
+
+// const initialState = {
+//   name: '',
+// } as AuthStateType;
 
 const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
-    updateUser(state, action) {
+    updateUser(state, action: PayloadAction<string>) {
       state.name = action.payload;
     },
     clearUser() {
